@@ -1,6 +1,6 @@
 <?php
 
-Abstract Class model_base {
+Abstract Class Model_Base {
 
 	protected $db;
 	protected $table;
@@ -25,16 +25,16 @@ Abstract Class model_base {
 	}
 	
 	function getAllRows(){
-		if(!isset($this->dataResult) OR empty($this->dataResult)) return false;
+		if(!isset($this->dataResult) || empty($this->dataResult)) return false;
 		return $this->dataResult;
 	}
 	
 	function getOneRow(){
-		if(!isset($this->dataResult) OR empty($this->dataResult)) return false;
+		if(!isset($this->dataResult) || empty($this->dataResult)) return false;
 		return $this->dataResult[0];
 	}	
-		function fetchOne(){
-		if(!isset($this->dataResult) OR empty($this->dataResult)) return false;
+	function fetchOne(){
+		if(!isset($this->dataResult) || empty($this->dataResult)) return false;
 		foreach($this->dataResult[0] as $key => $val){
 			$this->$key = $val;
 		}

@@ -6,15 +6,20 @@ Class Controller_Article  Extends Controller_Base {
 	
 	function index() {
 		$idArticle = (isset($_GET['id'])) ? (int)$_GET['id'] : false;
-                $ArticleViewPath = 'articles' . DS . $idArticle;
+                $ArticleViewPath = $idArticle . DS . 'index';
                 
                 $isArticle = false;
 		if(is_dir(SITE_PATH . 'views' . DS . 'layouts' . DS . $ArticleViewPath)){
 			$isArticle = true;
 		}
 		
-		$this->template->vars('isArticle', $isArticle);
-		$this->template->view($ArticleViewPath);
+                if (isArticle) {
+                   $this->template->view($ArticleViewPath); 
+                }
+                else {
+                    $this->template->view('notArticle' . DS . 'index');
+                }
+		
 	}
 	
 }

@@ -8,7 +8,12 @@ define ('SITE_PATH', $sitePath);
 
 include (SITE_PATH . DS . 'config.php'); 
 
-$dbObject = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+try{
+    $dbObject = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+} catch (PDOException $e) {
+  print "Ошибка подключения к базе данных: " . $e->getMessage();
+  die();
+}
 
 include (SITE_PATH . DS . 'core' . DS . 'core.php'); 
 

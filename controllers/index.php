@@ -7,12 +7,13 @@ Class Controller_Index Extends Controller_Base {
 	
 	
 	function index() {
-		$userInfo = array (
-			'id' => 'Id',
-			'first_name' => 'First name',
-			'last_name' => 'Last name'
-		);
-		$this->template->vars('userInfo', $userInfo);
+		$select = array(
+				'where' => "id >= 1 AND id <= 3"
+			);
+		$model = new Model_Article($select);
+		$articles = $model->getAllRow();
+                
+                $this->template->vars('articles', $articles);
 		$this->template->view('index');
 	}
 	

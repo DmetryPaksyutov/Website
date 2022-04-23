@@ -7,6 +7,7 @@ Class Controller_Forum  Extends Controller_Base {
 	function index() {
             $PageIndex = (isset($_GET['page'])) ? (int)$_GET['page'] : false;
             
+            $topics = array();
             if($PageIndex){
                 $begin = ((int)$PageIndex - 1) * 10 + 1;
                 $end = (int)$PageIndex * 10;
@@ -25,6 +26,7 @@ Class Controller_Forum  Extends Controller_Base {
         function find() {
             $findText = (isset($_POST['find'])) ? $_POST['find'] : false;
             
+            $topics = array();
             if ($findText) {
                $select = array(
 		'where' => "title LIKE  %$findText%"

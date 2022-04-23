@@ -17,5 +17,7 @@ Class Model_Article Extends Model_Base {
 
 		);
 	}
+        
+        
 	
 }

@@ -7,7 +7,7 @@
 </div>
 
 <div>
-    <button><a href="/create_topic">Создать тему обсуждения</a></button>
+    <button><a href="/forum/create">Создать тему обсуждения</a></button>
 </div>
 
 <div>
@@ -27,8 +27,4 @@
 	<h2>Темы не найдены</h2>
 <?php endif; ?>
 
-</div>
-
-<div>
-    Переход между стницами
 </div>

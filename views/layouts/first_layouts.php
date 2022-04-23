@@ -40,7 +40,7 @@
 					<ul class="top-menu">
 						<li class="top-menu__item"><a href="/forum" class="top-menu__link">Форум</a></li>
 						<li class="top-menu__item"><a href="/" class="top-menu__link">Главная</a></li>
-						<li class="top-menu__item"><a href="/articlesList" class="top-menu__link">Мероприятия</a></li>
+						<li class="top-menu__item"><a href="/articles" class="top-menu__link">Мероприятия</a></li>
 					</ul>
 				</div>
 			</div>

@@ -2,6 +2,18 @@
 
 Abstract Class Model_Base {
 
+    public function test() {
+            return array(
+                array(
+                   'id' => 1,
+                    'title' => 'Title123',
+                    'date_create' => 'Date Create',
+                    'image_path' => 'IMG_2496.jpeg', 
+                ),
+            );
+        }
+    
+    
 	protected $db;
 	protected $table;
 	private $dataResult;
@@ -24,7 +36,7 @@ Abstract Class Model_Base {
 		return $this->table;
 	}
 	
-	function getAllRows(){
+        function getAllRows(){
 		if(!isset($this->dataResult) || empty($this->dataResult)) return false;
 		return $this->dataResult;
 	}
@@ -83,9 +95,12 @@ Abstract Class Model_Base {
 	private function _getSelect($select) {
 		if(is_array($select)){
 			$allQuery = array_keys($select);
-			array_walk($allQuery, function(&$val){
+			/*array_walk($allQuery, function(&$val){
 				$val = strtoupper($val);
-			});
+			});*/
+                        foreach ($allQuery as $query) {
+                            $query = strtoupper($query);
+                        }
 			
 			$querySql = "";
 			if(in_array("WHERE", $allQuery)){
@@ -154,9 +169,13 @@ Abstract Class Model_Base {
 	
 	public function deleteRow(){
 		$arrayAllFields = array_keys($this->fieldsTable());
-		array_walk($arrayAllFields, function(&$val){
-			$val = strtoupper($val);
-		});
+		/*array_walk($arrayAllFields, function(&$val){
+			$val = strtoupper($val); 
+		});*/
+                foreach ($arrayAllFields as $field) {
+                            $field = strtoupper($field);
+                        }
+                
 		if(in_array('ID', $arrayAllFields)){			
 			try {
 				$db = $this->db;

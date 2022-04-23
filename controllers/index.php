@@ -11,7 +11,8 @@ Class Controller_Index Extends Controller_Base {
 				'where' => "id >= 1 AND id <= 3"
 			);
 		$model = new Model_Article($select);
-		$articles = $model->getAllRow();
+		//$articles = $model->getAllRow();
+                $articles = $model->test();
                 
                 $this->template->vars('articles', $articles);
 		$this->template->view('index');

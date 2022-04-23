@@ -23,12 +23,12 @@ Class Template {
 	}
 	
 	function view($name) {
-		$pathLayout = SITE_PATH . DS . 'views' . DS . 'layouts' . DS . $this->layouts . '.php';
-		$contentPage = SITE_PATH . DS. 'views' . DS . $this->controller . DS . $name . '.php';
+		$pathLayout = SITE_PATH . 'views' . DS . 'layouts' . DS . $this->layouts . '.php';
+		$contentPage = SITE_PATH . 'views' . DS . $this->controller . DS . $name . '.php';
                 
-                $imagesPath = SITE_PATH . DS . 'images' . DS;
+                $imagesPath = SITE_PATH . 'images' . DS;
                 $this->vars('imagesPath', $imagesPath);
-                $sitePath = SITE_PATH . DS;
+                $sitePath = SITE_PATH;
                 $this->vars('sitePath', $sitePath);
 		
                 if (file_exists($pathLayout) == false) {

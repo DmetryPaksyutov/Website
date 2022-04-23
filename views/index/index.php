@@ -9,7 +9,7 @@
 					<div class="info-item__wrapper">
                                             <img src="<?php echo $imagesPath; ?><?=$oneArticle['image_path'];?>" alt="">
 						<a class="info-a__wrapper" href="/article/?id=<?=$oneArticle['id'];?>"><p class="info_info"><?=$oneArticle['title'];?></p></a>
-						
+                                                
 					</div>
                                     </div>
                                     <?php endforeach; ?>

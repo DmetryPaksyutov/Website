@@ -7,7 +7,6 @@ Class Model_Topic Extends Model_Base {
         public $name_author;
         public $email_author;
 	public $text;
-	public $date_create;
         public $count_answers;
 	
 	public function fieldsTable(){
@@ -18,7 +17,6 @@ Class Model_Topic Extends Model_Base {
                     'text' => 'Text',
                     'name_author' => 'Name Author',
                     'email_author' => 'Email Author',
-                    'date_create' => 'Date Create',
                     'count_answers' => 'Count Answers',
 		);
 	}

@@ -14,7 +14,7 @@
         <label>ѕоле с именем должно быть заполнено</label><br/>
         <?php endif; ?>
         
-        <textaria name="text"/><br/>
+        <textaria name="text"></textaria><br/>
         <?php if($errors['text']): ?>
         <label>ѕоле с сообщением должно быть заполнено</label><br/>
         <?php endif; ?>
